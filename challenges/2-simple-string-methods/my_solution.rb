@@ -1,8 +1,11 @@
 # Simple String Methods
 
 # Tu solucion abajo:
+
 old_string = "Ruby is cool"
 new_string = old_string.reverse.upcase
+
+
 
 
 # Pruebas NO LAS BORRES
@@ -27,3 +30,6 @@ describe 'new_string' do
     expect(new_string).to eq "LOOC SI YBUR"
   end
 end
+
+
+# Escriban un progrma que le pregunte al usuario por su primer nombre, luego el apellido y luego que imprima una oracion que diga "Hola <nombre> <apellido> como estas"
