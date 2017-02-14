@@ -1,8 +1,14 @@
 # Define a Hash
 
 # Tu solucion abajo:
+my_info = {
+  first_name: "Melissa",
+  last_name: "Ramirez",
+  hometown: "Bogota",
+  age: 26
+}
 
-
+my_info.each {|key, value| p value}
 
 # Pruebas NO LAS BORRES
 
