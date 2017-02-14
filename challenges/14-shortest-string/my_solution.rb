@@ -15,7 +15,19 @@ def shortest_string(arr)
 	end
 end
 
+
 #shortest_string([])
 
 #otra forma
 #arr.min{|a,b| a.length <=> b.length}
+
+def shortest_string2(array)
+  return nil if array.empty?
+  array.sort_by! {|x| x.length}
+  array.first
+end
+
+def shortest_string3(array)
+  array.min({|a,b| a.length <=> b.length})
+end
+

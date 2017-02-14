@@ -1,7 +1,7 @@
 # Good Guess
 
-
 # Tu solucion abajo:
+
 def good_guess?(num)
 	if num==42
 		true
@@ -9,3 +9,5 @@ def good_guess?(num)
 		false
 	end
 end
+
+

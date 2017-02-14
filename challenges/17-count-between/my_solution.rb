@@ -1,6 +1,7 @@
 # Count Between
 
 # Tu solucion abajo:
+
 def count_between(arr, l_inf, l_sup)
 	range = []
 	arr.each do |val|
@@ -15,3 +16,24 @@ p count_between([1,2,3,4], 2, 4)
 
 #otra forma
 #arr.count {|x| x >= l_inf && x <= l_sup}
+
+
+[1,2,3,4,5,6]
+upper = 4
+lower = 2
+
+
+def count_between1(arr, upper, lower)
+  arr.count {|x| (x >= lower) && (x<= upper)}
+end
+
+def count_between2(arr, lower, upper)
+  count = 0
+  arr.each do |x|
+    if (x >= lower) && (x<= upper)
+      count = count + 1
+    end
+  end
+  count
+end
+
