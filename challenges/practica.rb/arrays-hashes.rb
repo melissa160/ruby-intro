@@ -4,17 +4,37 @@
 zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
                               "shotgun", "compass", "CB radio", "Tactical 10mm"]
 
+
 # 1. Itera sobre el array zombie_apocalypse_supplies, imprimiendo cada elemento dentro del array.
 # ----
+#zombie_apocalypse_supplies.each {|supplie| p supplie}
+
 
 # 2. Para mantenernos organizados, organiza el array zombie_apocalypse_supplies de forma alfabetica.
 # ----
+my_result = zombie_apocalypse_supplies.sort_by do |a|
+	 a.downcase
+end
+
+result = ["binoculars", "CB radio", "compass", "hatchet", "rations", "shotgun", "Tactical 10mm", "water jug"]
+
+#p (my_result == result) ? true : false
+
 
 # 3. Crea un metodo que mire si un item (string) esta dentro del arreglo zombie_apocalypse_supplies. Por ejemplo esta `boots` dentro de la lista de suministros?.
 # ----
+#p zombie_apocalypse_supplies.include?("bin")
+
 
 # 4. No puedes cargar muchas cosas, solo hay espacio para 5. Remueve todos los items del arreglo zombie_apocalypse_supplies que tengas mas de dos palabras, solo pueden quedar los 5 items compuestos de una sola palabra.
 # ----
+#zombie_apocalypse_supplies.map do |item|
+	zombie_apocalypse_supplies.delete_if {|sup| sup.include?(" ")} 
+	p zombie_apocalypse_supplies
+	#sup.include?(" ")#}
+#end
+
+
 
 # 5. Encontraste otro sobreviviente! esto significa que pueden combinar sus suministros. Crea un nuevo arreglo de suministros combinados en base a tus zombie_apocalypse_supplies, y los sumnitros del otro sobreviviente. Debes deshacerte de todos los suministros que esten duplicados. No olvides revisar la documentacion de Array.
 other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
