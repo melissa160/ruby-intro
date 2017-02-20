@@ -240,6 +240,7 @@ def modify(number_array)
 end
 #modify(number_array)
 
+
 # Crea un metodo que reciva un array como argumento, en este caso el array startup_names, y devuelva un array igual pero en donde a cada nombre se le a añadido 'ly' al final.
 
 startup_names = ["bit", ["find", "fast", ["optimize", "scope"]]]
@@ -258,6 +259,16 @@ end
 
 
 
+
+# Crea un metodo que reciva un array como argumento, en este caso el array startup_names, y devuelva un array igual pero en donde a cada nombre se le a añadido 'ly' al final.
+
+startup_names = ["bit", ["find", "fast", ["optimize", "scope"]]]
+>>>>>>> upstream/master
+
+def ilyfy(array)
+  if array[0].kind_of?(String)
+
+<<<<<<< HEAD
 # a.each.with_index do |item, i|
 #   'como'
 #   a.each.with_index do |secondItem, y|
@@ -268,5 +279,11 @@ end
 #     item == secondItem
 #   end
 # end
+=======
+  array[0] = array.first + 'ly'
+  ilyfy(array[1..-1])
+end
+>>>>>>> upstream/master
+
 
 
