@@ -11,11 +11,11 @@ def iterar(arr)
  p arr_supplies.each {|supplie| p supplie}
 end
 
-puts zombie_apocalypse_supplies
+#puts zombie_apocalypse_supplies
 
-zombie_apocalypse_supplies.each do |thing|
-  p thing
-end
+#zombie_apocalypse_supplies.each do |thing|
+#  p thing
+#end
 
 # 2. Para mantenernos organizados, organiza el array zombie_apocalypse_supplies de forma alfabetica.
 # ----
@@ -30,10 +30,7 @@ p (my_result == result) ? true : false
 
 end
 
-
-
-
- zombie_apocalypse_supplies.sort_by { |word| word.downcase }
+#zombie_apocalypse_supplies.sort_by { |word| word.downcase }
 
 # 3. Crea un metodo que mire si un item (string) esta dentro del arreglo zombie_apocalypse_supplies. Por ejemplo esta `boots` dentro de la lista de suministros?.
 # ----
@@ -45,7 +42,7 @@ def is_there_thing?(thing, a)
   a.include?(thing)
 end
 
-is_there_thing?('compass', zombie_apocalypse_supplies)
+#is_there_thing?('compass', zombie_apocalypse_supplies)
 
 # 4. No puedes cargar muchas cosas, solo hay espacio para 5. Remueve todos los items del arreglo zombie_apocalypse_supplies que tengas mas de dos palabras, solo pueden quedar los 5 items compuestos de una sola palabra.
 # ----
@@ -58,22 +55,25 @@ end
 
 
 
-result = zombie_apocalypse_supplies.select {|thing| !thing.include?(' ')}
+#result = zombie_apocalypse_supplies.select {|thing| !thing.include?(' ')}
 
 # 5. Encontraste otro sobreviviente! esto significa que pueden combinar sus suministros. Crea un nuevo arreglo de suministros combinados en base a tus zombie_apocalypse_supplies, y los sumnitros del otro sobreviviente. Debes deshacerte de todos los suministros que esten duplicados. No olvides revisar la documentacion de Array.
-def other_surv(arr)
+def other_surv(zombie_apocalypse_supplies)
 other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
                             "solar battery", "flashlight"]
 
-result = zombie_apocalypse_supplies + other_survivor_supplies
-result = result.uniq
+#solucion 1:
+#result = zombie_apocalypse_supplies + other_survivor_supplies
+#result = result.uniq
 
+#solucion 2:
 result = zombie_apocalypse_supplies | other_survivor_supplies
-# ----
-arr.push(other_survivor_supplies).flatten.uniq 
+p result
+#mi solucion
+#zombie_apocalypse_supplies.push(other_survivor_supplies).flatten.uniq 
 
 end
-
+other_surv(zombie_apocalypse_supplies)
 
 extinct_animals = {
   "Tasmanian Tiger" => 1936,
@@ -93,6 +93,7 @@ def imprimir(extinct_animals)
   extinct_animals.each do |animal, year|
     print "*#{animal}-#{year}\n"
   end
+end
 
 # extinct_animals.each do |animal, year|
 #   puts "#{animal}-#{year}"
@@ -210,8 +211,9 @@ def imprime_target(target, my_hash)
   # my_hash.keys.each do |key|
   #   p val[:inner].
   # end
+  end
 end
-imprime_target("congrats!", hash1)
+#imprime_target("congrats!", hash1)
 # ============================================================
 
 # Target: "finished"
