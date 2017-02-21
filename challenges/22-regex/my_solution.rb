@@ -4,7 +4,14 @@
 # Determina si un string contiene un SSN o no.
 def has_ssn?(string)
   # tu codigo va aca
+  !!(string =~ /\d{3}-\d{2}-\d{4}/)
+	# if string.match(/\d{3}-\d{2}-\d{4}/).to_s == string[/\d{3}-\d{2}-\d{4}/]
+	# 	true
+	# else
+	# 	false
+	# end 
 end
+
 
 puts "has_ssn? returns true if it has what looks like a SSN"
 puts has_ssn?("please don't share this: 234-60-1422") == true
@@ -16,6 +23,16 @@ puts has_ssn?("please confirm your identity: XXX-XX-1422") == false
 # Busca el numero SSN que se encuntra dentro de un string, si hay uno dentro de ella. De lo contrario devuelve nil.
 def grab_ssn(string)
   # tu codigo va aca
+  if !!(string =~ /\d{3}-\d{2}-\d{4}/)
+    string[string =~ /\d{3}-\d{2}-\d{4}/]
+  else
+    nil
+  end
+  # if string.match(/\d{3}-\d{2}-\d{4}/).to_s == string[/\d{3}-\d{2}-\d{4}/]
+  # 	string[/\d{3}-\d{2}-\d{4}/]
+  # else
+  # 	nil
+  # end
 end
 
 
@@ -29,6 +46,9 @@ puts grab_ssn("please confirm your identity: XXX-XX-1422") == nil
 # Devuelve todos los SSN dentro de un string. Si no hay ninguno devuelve un arreglo Vacio.
 def grab_all_ssns(string)
   # tu codigo va aca
+  arr = []
+  arr = string.gsub((/\d{3}-\d{2}-\d{4}/)).to_a
+  arr
 end
 
 puts "grab_all_ssns returns all SSNs if the string has any SSNs"
@@ -41,6 +61,20 @@ puts grab_all_ssns("please confirm your identity: XXX-XX-1422") == []
 # Ofusca todos los SSN dentro de un string, por ejmplo 123-55-4430 se convierte en  XXX-XX-4430. Deuvuele el string con los SSB ofuscados.
 def hide_all_ssns(string)
   # tu codigo va aca
+  
+  arr = string.gsub((/\d{3}-\d{2}-\d{4}/)).to_a
+
+  
+  if !arr.empty?
+	  arr.map do |ofuscado|
+	  	ofuscado.sub!(/\d{3}/,"XXX")
+	  	ofuscado.sub!(/\d{2}/,"XX")
+	  end
+  		answ = arr.join(", ")
+  	else
+  		answ = string
+  	end
+  	answ
 end
 
 puts "hide_all_ssns obfuscates any SSNs in the string"
@@ -50,11 +84,16 @@ puts "hide_all_ssns does not alter a string without SSNs in it"
 string = "please confirm your identity: XXX-XX-1422"
 puts hide_all_ssns(string) == string
 
+puts "hide_all_ssns un solo ssn"
+string = "please confirm your identity: 111-22-1422"
+puts hide_all_ssns(string) == "XXX-XX-1422"
 
 # Asegura que todos los SSN usen guiones (-) como separador de los numeros.
 # Ejemplo: 480.01.4430 y 480014430 se convierten en 480-01-4430.
 def format_ssns(string)
   # tu codigo va aca
+	#p string.gsub((/\d{3}(-|.)?\d{2}(-|.)?\d{4}/)).sub(/pattern/) { |match|  }
+
 end
 
 puts "format_ssns finds and reformat any SSNs in the string"

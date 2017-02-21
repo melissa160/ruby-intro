@@ -78,10 +78,9 @@ class Array
 	end
 
 	def my_min
-
-		self.my_inject(self.first) {|acu,x| x<acu ?   x : acu}
-		
+		self.my_inject(self.first) {|acu,x| x<acu ?   x : acu}		
 	end
+	
 	def my_max
 
 	end

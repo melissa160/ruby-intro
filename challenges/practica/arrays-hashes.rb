@@ -67,8 +67,8 @@ other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
 #result = result.uniq
 
 #solucion 2:
-result = zombie_apocalypse_supplies | other_survivor_supplies
-p result
+# result = zombie_apocalypse_supplies | other_survivor_supplies
+# p result
 #mi solucion
 #zombie_apocalypse_supplies.push(other_survivor_supplies).flatten.uniq 
 
@@ -129,9 +129,9 @@ def year_3(extinct_animals)
 end
 #p n
 
-extinct_animals.each do |animal, year|
-  extinct_animals[animal] = year - 3
-end
+# extinct_animals.each do |animal, year|
+#   extinct_animals[animal] = year - 3
+# end
 
 # 4. Oiste que los siguientes animales podian estar extinctos, pero no estas seguro. Uno por uno revisa si se encuentran incluidos dentro del hash extinct_animals:
 # "Andean Cat"
@@ -249,10 +249,10 @@ def modify2(startup_names)
   startup_names.flatten.map do |val|
     val.insert(val.length, 'ly')
   end
-  p startup_names
-  
+  startup_names
 end
-#modify2(startup_names)
+#hacerlo recursivamente
+p modify2(startup_names)
 
 
 #  a = ['hola', 'como', 'estas', 'como']
@@ -262,28 +262,7 @@ end
 
 # Crea un metodo que reciva un array como argumento, en este caso el array startup_names, y devuelva un array igual pero en donde a cada nombre se le a añadido 'ly' al final.
 
-startup_names = ["bit", ["find", "fast", ["optimize", "scope"]]]
->>>>>>> upstream/master
 
-def ilyfy(array)
-  if array[0].kind_of?(String)
-
-<<<<<<< HEAD
-# a.each.with_index do |item, i|
-#   'como'
-#   a.each.with_index do |secondItem, y|
-#     item = 'como'
-#     secondItem  = 'como'
-#     i = 1
-#     y = 3
-#     item == secondItem
-#   end
-# end
-=======
-  array[0] = array.first + 'ly'
-  ilyfy(array[1..-1])
-end
->>>>>>> upstream/master
 
 
 
