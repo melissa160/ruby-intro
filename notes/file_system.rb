@@ -4,8 +4,9 @@
 
 my_file = File.new("simple_file.txt", "w+")
 
-# http://ruby-doc.org/core-2.1.2/IO.html#method-c-new-label-IO+Open+Mode
+#MODOS: http://ruby-doc.org/core-2.1.2/IO.html#method-c-new-label-IO+Open+Mode
 my_file.close
+
 # Siempre cerrar el archivo, archivos abiertos van a seguir ocupando memoria.
 
 
@@ -43,14 +44,12 @@ File.readlines("file_name") #-> Lee todo el archivo linea por linea y devuelve e
 File.open("simple_file.txt", "w") { |file| file.write("adding first line of text") }
 
 # Alternativamente
-
 text = File.open("simple_file.txt",  "w+")
 text.puts("another example of writing to a file.")
-
 text.close
 
 # Para agregar mas texto a `simple_file.txt` podemos hacer esto:
-
+# la pala hace lo mismo que puts y write 
 File.open("simple_file.txt", "a+") do |file|
   file << "New line of text"
 end
@@ -74,7 +73,7 @@ File.delete("dummy_file.txt")
 #### ClASES DE FILE #########
 
 File.class
-File.superclass
-Dir
-Pathname
+File.superclass #IO
+Dir #manejo de carpetas #Dir.new('.') me dice la carpeta actual
+Pathname #clase para hacer cosas con los paths
 CSV

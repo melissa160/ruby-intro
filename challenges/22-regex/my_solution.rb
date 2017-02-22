@@ -3,7 +3,7 @@
 
 # Determina si un string contiene un SSN o no.
 def has_ssn?(string)
-<<<<<<< HEAD
+
   # tu codigo va aca
   !!(string =~ /\d{3}-\d{2}-\d{4}/)
 	# if string.match(/\d{3}-\d{2}-\d{4}/).to_s == string[/\d{3}-\d{2}-\d{4}/]
@@ -27,13 +27,13 @@ puts has_ssn?("please confirm your identity: XXX-XX-1422") == false
 def grab_ssn(string)
 
   # tu codigo va aca
-  if !!(string =~ /\d{3}-\d{2}-\d{4}/)
-    string[string =~ /\d{3}-\d{2}-\d{4}/]
-  else
-    nil
-  end
+  # if !!(string =~ /\d{3}-\d{2}-\d{4}/)
+  #   string[string =~ /\d{3}-\d{2}-\d{4}/]
+  # else
+  #   nil
+  # end
 
-  #string[/\d{3}-\d{2}-\d{4}/]
+  string[/\d{3}-\d{2}-\d{4}/]
 
 end
 
