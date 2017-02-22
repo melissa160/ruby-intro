@@ -1,3 +1,4 @@
+
 user = ARGV.index("--user")
 greeting = ARGV.index("--greeting")
 
@@ -7,3 +8,4 @@ else
 	puts "Algo salio mal"
 	
 end
+

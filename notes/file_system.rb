@@ -41,7 +41,7 @@ File.readlines("file_name") #-> Lee todo el archivo linea por linea y devuelve e
 
 
 # Esta forma garantiza que se cierre el archivo
-File.open("simple_file.txt", "w") { |file| file.write("adding first line of text") }
+File.open("simple_file.txt", "w") { |file| file.puts("adding first line of text") }
 
 # Alternativamente
 text = File.open("simple_file.txt",  "w+")
@@ -73,7 +73,9 @@ File.delete("dummy_file.txt")
 #### ClASES DE FILE #########
 
 File.class
+
 File.superclass #IO
 Dir #manejo de carpetas #Dir.new('.') me dice la carpeta actual
 Pathname #clase para hacer cosas con los paths
+
 CSV
