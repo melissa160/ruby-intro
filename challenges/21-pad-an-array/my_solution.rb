@@ -1,29 +1,29 @@
-# Mi solucion:
-def pad(arr, min, relleno=nil)
-	# arr_aux = arr.clone
-	# if arr_aux.length < min 
-	# 	(min-arr_aux.length).times {arr_aux.push(relleno)}
-	# end
-	# arr_aux
-	arr_aux =[]
-	arr_aux.push(arr)
-	if arr.length < min
-		(min-arr.length).times {arr_aux.push(relleno)}
-	end
-	arr_aux
+# # Mi solucion:
+# def pad(arr, min, relleno=nil)
+# 	# arr_aux = arr.clone
+# 	# if arr_aux.length < min 
+# 	# 	(min-arr_aux.length).times {arr_aux.push(relleno)}
+# 	# end
+# 	# arr_aux
+# 	arr_aux =[]
+# 	arr_aux.push(arr)
+# 	if arr.length < min
+# 		(min-arr.length).times {arr_aux.push(relleno)}
+# 	end
+# 	arr_aux
 	
-end
+# end
 
-def pad!(arr, min, relleno=nil)
-	if arr.length < min 
-		(min-arr.length).times {arr.push(relleno)}
-	end
-	arr
-end
+# def pad!(arr, min, relleno=nil)
+# 	if arr.length < min 
+# 		(min-arr.length).times {arr.push(relleno)}
+# 	end
+# 	arr
+# end
 
-#pad([1,2,3], 6)
-#p pad([1,2,3], 0)
-#p pad([1,2,3], 1, "beso")
+# pad([1,2,3], 6)
+# p pad([1,2,3], 0)
+# p pad([1,2,3], 1, "beso")
 
 def my_map(array)
 	result = []
@@ -89,3 +89,30 @@ end
 #p [30,2,3,4].my_find_all {|x| x > 2}
 #p [1,2,3,4,5,6].my_inject(1) {|acu,x| acu*x }
 p [9,2,3,4,5,60].my_min
+
+def pad!(arr, num, word=nil)
+	if num <= arr.length
+		arr
+	else
+		(num-arr.length).times {arr << word}
+	end
+	arr
+end
+
+def pad(arr, num, word=nil)
+	new_arr = []
+	new_arr << arr
+	new_arr.flatten!
+	if num <= new_arr.length
+		new_arr
+	else
+		(num-new_arr.length).times {new_arr << word}
+	end
+	new_arr
+	
+end
+pad([1,2,3], 5, 'apple')
+
+
+
+

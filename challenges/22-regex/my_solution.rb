@@ -114,7 +114,7 @@ puts hide_all_ssns(string) == "XXX-XX-1422"
 def format_ssns(string)
 
   # tu codigo va aca
-  string.gsub(/(\d{3})\D?(\d{2})\D?(\d{4})/, '\1-\2-\3')
+  p string.gsub(/(\d{3})\D?(\d{2})\D?(\d{4})/, '\1-\2-\3')
 
 end
 
