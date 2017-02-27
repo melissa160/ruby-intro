@@ -3,6 +3,7 @@
 
 # Tu solucion abajo:
 
+<<<<<<< HEAD
 num1 = 24
 num2 = 7
 sum = num1 + num2
@@ -11,6 +12,16 @@ quotient = num1.to_f/num2.to_f
 product = num1*num2
 modulus = num1%num2
 
+=======
+num1 = 4
+num2 = 9
+
+sum = num2 + num1
+difference = num1 - num2
+quotient = num1.to_f / num2
+modulus = num1 % num2
+product = num1 * num2
+>>>>>>> upstream/master
 
 # Pruebas NO LAS BORRES
 

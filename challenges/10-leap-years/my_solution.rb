@@ -9,6 +9,7 @@
 
 # p 'blahah' if condition
 
+<<<<<<< HEAD
 # Tu solucion abajo:
 def leap_year?(año)
 #	if año%4 == 0 && año%100 != 0
@@ -32,6 +33,8 @@ def leap_year?(año)
 	end
 
 end
+=======
+>>>>>>> upstream/master
 
 # if condition
 #   p 'Blahah'
@@ -54,7 +57,11 @@ end
 #   end
 # end
 
+<<<<<<< HEAD
 def leap_year2?(year)
+=======
+def leap_year?(year)
+>>>>>>> upstream/master
   if year % 4 == 0 && year / 100 != 0 || year % 400 == 0
     true
   else

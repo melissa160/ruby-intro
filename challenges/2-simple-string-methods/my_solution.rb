@@ -3,10 +3,14 @@
 # Tu solucion abajo:
 
 old_string = "Ruby is cool"
+<<<<<<< HEAD
 new_string = old_string.reverse.upcase
 
 
 
+=======
+new_string = old_string.upcase.reverse
+>>>>>>> upstream/master
 
 # Pruebas NO LAS BORRES
 

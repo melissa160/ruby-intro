@@ -9,7 +9,10 @@ Existen varias clases que nos ayudan a manipular archivos pero la principales`Fi
 ### Paso 1: Leer Archivos dentro de Carpetas
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> upstream/master
 =======
 >>>>>>> upstream/master
 Tu objetivo es leer todos los archivos de primer nivel de la carpeta `testFiles`. Esto quiere decir que no debes leer los archivos que se encuentren dentro de `nestedDirectory`

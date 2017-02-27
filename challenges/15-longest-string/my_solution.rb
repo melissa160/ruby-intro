@@ -2,6 +2,7 @@
 
 # Tu solucion abajo:
 
+<<<<<<< HEAD
 def longest_string(arr)
 	len = 0
 	elegido = 0
@@ -13,3 +14,5 @@ def longest_string(arr)
 	end
 	arr[elegido]
 end
+=======
+>>>>>>> upstream/master

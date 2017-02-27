@@ -1,4 +1,5 @@
 # Pseudocode
+<<<<<<< HEAD
 # GET una palabra de input del usuario.
 # IF la palabra empieza con una vocal, no cambiarla.
 # ELSE reemplaza la palabra con su equivalente pig latinizado
@@ -6,10 +7,15 @@
 #   SET las consonantes al final de la palabra y agrega el sufijo `ay`.
 # ENDIF
 # PRINT la palabra pig latinizada.
+=======
+
+
+>>>>>>> upstream/master
 
 # 1. Solucion Inicial
 
 
+<<<<<<< HEAD
  # flag = false
 	
 	
@@ -49,6 +55,8 @@ if 	final == ""
 else
 	p "#{final2}#{final}ay"
 end
+=======
+>>>>>>> upstream/master
 
 
 

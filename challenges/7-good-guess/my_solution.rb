@@ -2,6 +2,7 @@
 
 # Tu solucion abajo:
 
+<<<<<<< HEAD
 def good_guess?(num)
 	if num==42
 		true
@@ -11,3 +12,12 @@ def good_guess?(num)
 end
 
 
+=======
+def good_guess?(a)
+  if a == 42
+    true
+  else
+    false
+  end
+end
+>>>>>>> upstream/master
