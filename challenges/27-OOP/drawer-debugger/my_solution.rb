@@ -2,54 +2,58 @@ class Drawer
 
 attr_reader :contents
 
-# Se necesita algun metodo mas en esta clase?
+# Se necesita algun metodo mas en esta clase? 
 
-def initialize
-@contents = []
-@open = true
+  def initialize
+    @contents = []
+    @open = true
+  end
+
+  def open
+    @open = true
+  end
+
+  def close
+    @open = false
+  end
+
+  def add_item(item)
+    @contents << item
+  end
+
+  def remove_item(item = @contents.pop) #que hace pop? saca el ultimo elemento del array contents
+    @contents.delete(item)
+  end
+
+  def dump  # que debe devolver este metodo? el contenedor vacio
+    puts "Your drawer is empty."
+    @contents = []
+  end
+
+  def view_contents
+    puts "The drawer contains:"
+    @contents.each {|silverware| puts "- " + silverware.type }
+  end
+
 end
-
-def open
-@open = true
-end
-
-def close
-@open = false
-end
-
-def add_item
-@contents << item
-end
-
-def remove_item(item = @contents.pop) #que hace pop?
-@contents.delete(item)
-end
-
-def dump  # que debe devolver este metodo?
-puts "Your drawer is empty."
-end
-
-def view_contents
-puts "The drawer contains:"
-@contents.each {|silverware| puts "- " + silverware.type }
-end
-
 
 class Silverware
-attr_reader :type
+  attr_reader :type, :clean
 
-# Se necesita algun otro metodo en esta clase?
+  # Se necesita algun otro metodo en esta clase? si clean_silverware
+  def initialize(type, clean = true)
+    @type = type
+    @clean = clean
+  end
 
-def initialize(type, clean = true)
-@type = type
-@clean = clean
-end
+  def eat
+    puts "eating with the #{type}"
+    @clean = false
+  end
 
-def eat
-puts "eating with the #{type}"
-@clean = false
-end
-
+  def clean_silverware
+    @clean = true
+  end
 end
 
 
@@ -82,9 +86,11 @@ silverware_drawer.dump
 raise Exception.new("Your drawer is not actually empty") unless silverware_drawer.contents.empty?
 silverware_drawer.view_contents
 
-# Que necesitas aca para remover una cuchara? puedes modificar el driver code en este error.
+# Que necesitas aca para remover una cuchara? puedes modificar el driver code en este error. Crearla como instancia de Silverware
+spoon = Silverware.new("spoon")
+silverware_drawer.add_item(spoon)
 raise Exception.new("You don't have a spoon to remove") unless silverware_drawer.contents.include?(spoon)
 
-silverware_drawer.remove_item(spoon) #que pasa aca la primera vez que corre?
+silverware_drawer.remove_item(spoon) #que pasa aca la primera vez que corre? El array queda vacio
 spoon.eat
 puts spoon.clean #=> Esto deberia ser falso
