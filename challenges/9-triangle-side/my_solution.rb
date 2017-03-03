@@ -1,6 +1,7 @@
 # Triangle Side
 
 # Tu solucion abajo:
+<<<<<<< HEAD
 def valid_triangle?(num1, num2, num3)
 
 	arr = [num1, num2, num3]
@@ -21,6 +22,9 @@ def valid_triangle?(num1, num2, num3)
 	end
 
 end
+=======
+
+>>>>>>> upstream/master
 
 def valid_triangle?(x,y,z)
   if x <= 0 && y <= 0 && z <= 0
@@ -56,4 +60,7 @@ end
 
 
 
+<<<<<<< HEAD
+>>>>>>> upstream/master
+=======
 >>>>>>> upstream/master

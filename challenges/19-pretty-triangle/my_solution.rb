@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # # Pretty Triangle
+=======
+# Pretty Triangle
+>>>>>>> upstream/master
 
 def print_triangle(arg)
     array = (1..arg).to_a
@@ -10,6 +14,7 @@ def print_triangle(arg)
 end
 
 
+<<<<<<< HEAD
 # # Tu solucion abajo:
 # def print_triangle(num)
 # 	(1..num).each do |x|
@@ -35,6 +40,12 @@ print_triangle(6)
 
 
 def print_triangle3 int1
+=======
+# Tu solucion abajo:
+
+
+def print_triangle int1
+>>>>>>> upstream/master
   if int1<=0
 
    else
@@ -62,4 +73,7 @@ end
 #   end
 # end
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> upstream/master

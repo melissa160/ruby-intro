@@ -1,6 +1,7 @@
 # Define a Hash
 
 # Tu solucion abajo:
+<<<<<<< HEAD
 my_info = {
   first_name: "Melissa",
   last_name: "Ramirez",
@@ -9,6 +10,10 @@ my_info = {
 }
 
 my_info.each {|key, value| p value}
+=======
+
+
+>>>>>>> upstream/master
 
 # Pruebas NO LAS BORRES
 

@@ -2,6 +2,7 @@
 
 
 # Tu solucion abajo:
+<<<<<<< HEAD
 
 def factorial1(int)
 	a = 1
@@ -12,6 +13,9 @@ end
 p factorial(20)
 
 def factorial2(number)
+=======
+def factorial(number)
+>>>>>>> upstream/master
   result = 1
   while number>=1
     result = result*number
@@ -21,7 +25,11 @@ def factorial2(number)
 end
 
 
+<<<<<<< HEAD
 def factorial3(number)
+=======
+def factorial(number)
+>>>>>>> upstream/master
   if number <= 1
     1
   else
@@ -31,7 +39,11 @@ end
 
 
 
+<<<<<<< HEAD
 def factorial4(n)
+=======
+def factorial(n)
+>>>>>>> upstream/master
   if n == 0
      n = 1
   else

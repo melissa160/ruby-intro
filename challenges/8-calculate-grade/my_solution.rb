@@ -1,6 +1,7 @@
 # Calculate a Grade
 
 # Tu solucion abajo:
+<<<<<<< HEAD
 def get_grade(prom)
 	if prom < 60
 		"F"
@@ -14,6 +15,8 @@ def get_grade(prom)
 		"A"
 	end
 end
+=======
+>>>>>>> upstream/master
 
 def get_grade(a,b,c, *)
   average = (a + b + c) / 3

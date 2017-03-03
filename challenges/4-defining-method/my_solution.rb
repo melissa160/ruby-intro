@@ -1,6 +1,10 @@
 # Define an Empty Method
+<<<<<<< HEAD
 def do_something()
 end
+=======
+
+>>>>>>> upstream/master
 
 
 

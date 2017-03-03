@@ -2,11 +2,21 @@
 
 # Tu solucion abajo
 
+<<<<<<< HEAD
 first_name = "Melissa"
 last_name = "Ramirez"
 age = 26
 
 
+=======
+first_name = 'Juan'
+last_name = 'fdsaf'
+age = 2
+
+name = "Germán"
+name = gets.chomp
+puts "Hola #{name}"
+>>>>>>> upstream/master
 
 # Pruebas NO LAS BORRES
 
