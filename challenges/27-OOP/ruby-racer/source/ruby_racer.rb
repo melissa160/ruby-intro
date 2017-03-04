@@ -35,7 +35,12 @@ class RubyRacer
   end
   
   def somebody_is_winner?(player)
-    @race_progress[player] >= @length
+    if @race_progress[player] >= @length
+      is_tied? ? @winner_player = @winners.join(", ") : @winner_player = @winners.join
+      true
+    else 
+      false
+    end
   end
 
   def find_winners
@@ -63,13 +68,14 @@ class RubyRacer
       if not_advance_more_than_lenght?(player)
         @race_progress[player] += @die.roll
         if somebody_is_winner?(player)
-          if is_tied?
-            @winner_player = @winners.join(", ")
-            @finished = true
-          else
-            @winner_player = player
-            @finished = true
-          end       
+          @finished = true
+          # if is_tied?
+          #   @winner_player = @winners.join(", ")
+          #   @finished = true
+          # else
+          #   @winner_player = player
+          #   @finished = true
+          # end       
         end
     end
   end
