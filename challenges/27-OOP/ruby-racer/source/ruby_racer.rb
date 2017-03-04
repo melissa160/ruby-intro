@@ -6,18 +6,20 @@ class RubyRacer
   def initialize(players, length = 30)
     @players = players
     @length = length
-    @metrics_x_player = {}
-    
+    @race_progress = {}
+    @finished = false
+    @winner_player = "sin ganador"
     #create hash with key:player and value sum metrics
-    create_metrics
+    create_race
 
     #crear un dado
     @die = Die.new
   end
 
-  def create_metrics
-    @players.each {|player| @metrics_x_player[player] = 0 }
+  def create_race
+    @players.each {|player| @race_progress[player] = 0 }
   end
+
   # Devuelve true si uno de los jugadores llego a la meta, falso de lo contrario
   def finished?
     @finished
@@ -28,15 +30,47 @@ class RubyRacer
     @winner_player
   end
 
+  def not_advance_more_than_lenght?(player)
+    @race_progress[player] < @length
+  end
+  
+  def somebody_is_winner?(player)
+    @race_progress[player] >= @length
+  end
+
+  def find_winners
+    max_advance = @race_progress.values.max
+    @winners = []
+
+    @race_progress.each do |player, advance|
+      if advance == max_advance
+        @winners << player
+      end
+    end
+  end
+
+  def is_tied?
+    find_winners
+    if @winners.length <= 1
+      false
+    else
+      true
+    end
+  end
   # Rueda el dado y avanza la posicion del jugador respectivo
   def advance_player!(player)
-    if @metrics_x_player[player] < @length
       # lanzo el dado
-      @metrics_x_player[player] += @die.roll
-      if @metrics_x_player[player] >= @length
-        @winner_player = player
-        @finished = true
-      end
+      if not_advance_more_than_lenght?(player)
+        @race_progress[player] += @die.roll
+        if somebody_is_winner?(player)
+          if is_tied?
+            @winner_player = @winners.join(", ")
+            @finished = true
+          else
+            @winner_player = player
+            @finished = true
+          end       
+        end
     end
   end
 
@@ -44,7 +78,7 @@ class RubyRacer
   # El tablero siempre debe tener las mismas dimensiones
   # Debes imprimir encima del tablero anterior
   def print_board
-    @metrics_x_player.each do |player, advance|
+    @race_progress.each do |player, advance|
       p advance
       puts "#{"-"*(advance >= @length ? @length : advance)}#{player}#{"/"*(advance >= @length ? 0 : @length-advance)}"
     end
@@ -53,7 +87,7 @@ end
 
 #=========== driver code ===========
 
-players = ["A", "Z"]
+players = ["A", "Z", "H", "M"]
 game = RubyRacer.new(players)
 
 # limpia la pantalla
@@ -75,6 +109,7 @@ until game.finished?
 end
 
 # El juego termino
+puts "---------Tablero final----------"
 game.print_board
 
 puts "El jugador'#{game.winner}' ha ganado!"
