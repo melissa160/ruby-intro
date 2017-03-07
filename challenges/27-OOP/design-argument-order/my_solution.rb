@@ -37,4 +37,11 @@ end
 
 # Pon driver code aca para probar que todo este funcionando.
 ###### DRIVER CODE ########
+<<<<<<< HEAD
 my_house = House.new({num_bedrooms: 3, num_baths: 2, cost: 320_000, down_payment: 0.20})
+=======
+
+
+
+
+>>>>>>> upstream/master
