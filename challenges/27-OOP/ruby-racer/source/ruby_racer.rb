@@ -68,14 +68,7 @@ class RubyRacer
       if not_advance_more_than_lenght?(player)
         @race_progress[player] += @die.roll
         if somebody_is_winner?(player)
-          @finished = true
-          # if is_tied?
-          #   @winner_player = @winners.join(", ")
-          #   @finished = true
-          # else
-          #   @winner_player = player
-          #   @finished = true
-          # end       
+          @finished = true     
         end
     end
   end
@@ -93,7 +86,7 @@ end
 
 #=========== driver code ===========
 
-players = ["A", "Z", "H", "M"]
+players = ["A", "Z", "H", "M", "J", "O"]
 game = RubyRacer.new(players)
 
 # limpia la pantalla
