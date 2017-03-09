@@ -1,7 +1,6 @@
 class Ship
   include Sinkable
 
-fsdfsdfsf
   def initialize
     @hits = 0
   end
