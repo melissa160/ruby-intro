@@ -1,5 +1,6 @@
 require 'sqlite3'
 
+
 $db = SQLite3::Database.new("animal_shelter.db", results_as_hash: true)
 
 module ORM_Helper
@@ -18,6 +19,7 @@ class Dog
       ORM_Helper.symbolize_keys(dog_data)
       Dog.new(dog_data)
     end
+
   end
 
   def initialize(args)
@@ -26,16 +28,29 @@ class Dog
     @age = args[:age]
     @weight = args[:weight]
   end
+
+  def self.find(id)
+    $db.execute("SELECT * FROM dogs where id = #{id};").map do |dog_data|
+      ORM_Helper.symbolize_keys(dog_data)
+      Dog.new(dog_data)
+    end
+  end
+
+  def self.create(args)
+    $db.execute('insert into dogs ()')
+  end
 end
 
 
+# last_insert_row_id
 
 
 
 # Driver code ### Esto deberia funcionar
 
-p Dog.all
-p Dog.find(1)
+Dog.all
+Dog.find(2)
 dog2 = Dog.find(2)
 ozu = Dog.create(name: 'ozu', age: 6, weight: 14)
-p Dog.where("name = ?", ozu.name)
+p ozu
+# p Dog.where("name = ?", ozu.name)
