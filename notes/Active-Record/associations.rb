@@ -1,7 +1,7 @@
 class Product < ActiveRecord::Base
   attr_reader :name
   belongs_to :store
-  # es igual a
+
 
   def store
      Store.find_by(id: 1)
